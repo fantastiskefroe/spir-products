@@ -1,0 +1,17 @@
+{
+  "name": "spir-products",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fantastiskefroe/qr-products.git"
+  },
+  "author": "FantastiskeFrø",
+  "bugs": {
+    "url": "https://github.com/fantastiskefroe/qr-products.git/issues"
+  },
+  "homepage": "https://github.com/fantastiskefroe/qr-products.git#readme",
+}
