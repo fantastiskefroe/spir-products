@@ -4,12 +4,12 @@ const Sentry = require('@sentry/node');
 export class SentryService implements Service {
     public readonly name = "Sentry";
     public readonly environmentVariables = [
-        'SPIR_PRODUCTS_SENTRY_DSN'
+        'SENTRY_DSN'
     ];
 
     public init(): Promise<void> {
-        const dsn = process.env.SPIR_PRODUCTS_SENTRY_DSN;
-        const release = process.env.SPIR_PRODUCTS_SENTRY_RELEASE;
+        const dsn = process.env.SENTRY_DSN;
+        const release = process.env.SENTRY_RELEASE;
 
         const options = {
             dsn,

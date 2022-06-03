@@ -6,7 +6,7 @@ import {Product} from "../model/product";
 export class ExpressService implements Service {
     public readonly name = "Express";
     public readonly environmentVariables = [
-        'SPIR_PRODUCTS_PORT'
+        'PORT'
     ];
 
     private static readonly URL_PREFIX = 'https://fantastiskefroe.dk';
@@ -16,7 +16,7 @@ export class ExpressService implements Service {
 
     public init(): Promise<void> {
         const app = express();
-        const port = process.env.SPIR_PRODUCTS_PORT;
+        const port = process.env.PORT;
 
         app.get('/', this.getAllProducts.bind(this));
 
