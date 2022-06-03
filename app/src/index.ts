@@ -1,22 +1,20 @@
-import express from "express";
+import {ServiceRegistry} from './config/service-registry';
+import {SentryService} from './service/sentry-service';
+import {ExpressService} from './service/express-service';
 
-const app = express();
-const port = 3000;
+const serviceRegistry = new ServiceRegistry();
+serviceRegistry.registerService(new SentryService());
+serviceRegistry.registerService(new ExpressService());
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-});
+serviceRegistry.initServices();
 
-const server = app.listen(port, () => {
-    console.log(`Listening on port ${port}`)
-});
+
 
 process.on('SIGINT', handleTermination);
 process.on('SIGTERM', handleTermination);
 
 function handleTermination(args) {
     console.info(`Received ${args} shutting down`);
-    server.close(() => {
-        console.info('HTTP server closed');
-    });
+    serviceRegistry.destructServices()
+        .then(() => process.exit(0));
 }
