@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: spir-products
+    defaults:
+      run:
+        working-directory: ./app
     steps:
       - name: Checkout
         uses: actions/checkout@v3
