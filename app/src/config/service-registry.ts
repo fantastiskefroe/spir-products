@@ -18,7 +18,7 @@ export class ServiceRegistry {
         dotenv.config();
 
         const envVars: Record<string, string> = {
-            'DEBUG': process.env.DEBUG
+            'SPIR_PRODUCTS_DEBUG': process.env.SPIR_PRODUCTS_DEBUG
         }
 
         services

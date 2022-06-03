@@ -15,9 +15,9 @@ FROM node:16-alpine
 WORKDIR /app
 
 ARG RELEASE
-ENV SENTRY_RELEASE=${RELEASE:-dev}
+ENV SPIR_PRODUCTS_SENTRY_RELEASE=${RELEASE:-dev}
 ENV NODE_ENV=production
-ENV DEBUG=false
+ENV SPIR_PRODUCTS_DEBUG=false
 
 COPY app/package*.json ./
 RUN npm ci --quiet --only=production
