@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev --respawn --pretty --transpile-only src/index.ts",
+    "build": "tsc -p tsconfig.production.json"
   },
   "repository": {
     "type": "git",
@@ -14,4 +15,9 @@
     "url": "https://github.com/fantastiskefroe/qr-products.git/issues"
   },
   "homepage": "https://github.com/fantastiskefroe/qr-products.git#readme",
+  "devDependencies": {
+    "@types/node": "^16.11.38",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.7.2"
+  }
 }
