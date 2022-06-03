@@ -3,8 +3,9 @@ node_modules
 app/dist
 
 
-# local env files
-.env.local
+# env files
+.env
+app/.env
 .env.*.local
 
 # Log files
