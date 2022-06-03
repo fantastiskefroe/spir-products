@@ -38,6 +38,6 @@ jobs:
           SENTRY_PROJECT: ${{ env.IMAGE_NAME }}
         with:
           environment: 'production'
-          sourcemaps: 'dist'
-          url_prefix: '/dist'
+          sourcemaps: 'app/dist'
+          url_prefix: '/app/dist'
           version: ${{ github.sha }}
