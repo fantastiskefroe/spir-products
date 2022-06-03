@@ -36,7 +36,7 @@ export class ExpressService implements Service {
 
     private getAllProducts(_req, res) {
         this.fetchProducts()
-            .then(products => res.send(products));
+            .then(products => res.json(products));
     }
 
     private async fetchProducts(): Promise<Product[]> {
