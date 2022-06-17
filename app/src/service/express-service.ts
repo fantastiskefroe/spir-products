@@ -1,6 +1,7 @@
 import {Service} from '../model/service';
 import fetch from 'node-fetch';
 import express from 'express';
+import cors from 'cors';
 import {Product} from "../model/product";
 
 export class ExpressService implements Service {
@@ -17,6 +18,12 @@ export class ExpressService implements Service {
     public init(): Promise<void> {
         const app = express();
         const port = process.env.PORT;
+
+        const corsOptions = {
+            origin: 'http://localhost:8080'
+        };
+
+        app.use(cors(corsOptions));
 
         app.get('/', this.getAllProducts.bind(this));
 
