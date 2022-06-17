@@ -20,7 +20,7 @@ export class ExpressService implements Service {
         const port = process.env.PORT;
 
         const corsOptions = {
-            origin: 'http://localhost:8080'
+            origin: ["http://localhost", /\.fantastiskefroe\.dk$/]
         };
 
         app.use(cors(corsOptions));
