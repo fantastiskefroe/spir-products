@@ -4,4 +4,10 @@ export interface Product {
     handle: string;
     url: string;
     imageUrl: string;
+    variants: {
+        id: string,
+        title: string,
+        sku: string,
+        price: number
+    };
 }

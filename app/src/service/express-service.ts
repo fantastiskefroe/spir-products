@@ -61,7 +61,7 @@ export class ExpressService implements Service {
     }
 
     private static mapProducts(input: string): Product[] {
-        const parsed: {products: Record<string, { id: string, title: string, handle: string, url: string, image: string }>} = JSON.parse(input);
+        const parsed: {products: Record<string, { id: string, title: string, handle: string, url: string, image: string, variants }>} = JSON.parse(input);
 
         const result: Product[] = [];
         for (const value of Object.values(parsed.products)) {
@@ -70,7 +70,8 @@ export class ExpressService implements Service {
                 title: value.title,
                 handle: value.handle,
                 url: ExpressService.URL_PREFIX + value.url,
-                imageUrl: value.image
+                imageUrl: value.image,
+                variants: value.variants
             });
         }
 
